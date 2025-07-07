@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cute Page 3</title>
+
+  <!-- Playfair Display font -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/page3.css" />
+</head>
+<body>
+  <div class="page page3">
+    <audio id="bg-music" autoplay muted playsinline>
+      <source src="music/song1.mp3" type="audio/mpeg" />
+    </audio>
+    <audio id="bg-music-2">
+      <source src="music/song2.mp3" type="audio/mpeg" />
+    </audio>
+
+    <div class="tap-message" id="tap-msg">Tap for music 🎵</div>
+
+    <div class="image-strip">
+      <!-- First set of images -->
+      <img src="images/image3.jpg" alt="pic1" class="slide-img" />
+      <img src="images/image4.jpg" alt="pic2" class="slide-img" />
+      <img src="images/image5.jpg" alt="pic3" class="slide-img" />
+      <img src="images/image6.jpg" alt="pic4" class="slide-img" />
+      <img src="images/image7.jpg" alt="pic5" class="slide-img" />
+      <img src="images/image8.jpg" alt="pic6" class="slide-img" />
+      <img src="images/image9.jpg" alt="pic7" class="slide-img" />
+      <img src="images/image10.jpg" alt="pic8" class="slide-img" />
+      <img src="images/image11.jpg" alt="pic9" class="slide-img" />
+      <img src="images/image12.jpg" alt="pic10" class="slide-img" />
+      <img src="images/image13.jpg" alt="pic11" class="slide-img" />
+      <img src="images/image14.jpg" alt="pic12" class="slide-img" />
+      <img src="images/image15.jpg" alt="pic13" class="slide-img" />
+      <img src="images/image16.jpg" alt="pic14" class="slide-img" />
+      <img src="images/image17.jpg" alt="pic15" class="slide-img" />
+
+      <!-- Duplicate set of images for seamless scroll -->
+      <img src="images/image3.jpg" alt="pic1" class="slide-img" />
+      <img src="images/image4.jpg" alt="pic2" class="slide-img" />
+      <img src="images/image5.jpg" alt="pic3" class="slide-img" />
+      <img src="images/image6.jpg" alt="pic4" class="slide-img" />
+      <img src="images/image7.jpg" alt="pic5" class="slide-img" />
+      <img src="images/image8.jpg" alt="pic6" class="slide-img" />
+      <img src="images/image9.jpg" alt="pic7" class="slide-img" />
+      <img src="images/image10.jpg" alt="pic8" class="slide-img" />
+      <img src="images/image11.jpg" alt="pic9" class="slide-img" />
+      <img src="images/image12.jpg" alt="pic10" class="slide-img" />
+      <img src="images/image13.jpg" alt="pic11" class="slide-img" />
+      <img src="images/image14.jpg" alt="pic12" class="slide-img" />
+      <img src="images/image15.jpg" alt="pic13" class="slide-img" />
+      <img src="images/image16.jpg" alt="pic14" class="slide-img" />
+      <img src="images/image17.jpg" alt="pic15" class="slide-img" />
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", function () {
+      const music1 = document.getElementById("bg-music");
+      const music2 = document.getElementById("bg-music-2");
+      const tapMsg = document.getElementById("tap-msg");
+
+      music1.volume = 0.15;
+      music1.muted = true;
+
+      const enableMusic = () => {
+        music1.muted = false;
+        music1.play().catch(() => {});
+        tapMsg.classList.add("hide");
+      };
+
+      document.body.addEventListener("click", enableMusic, { once: true });
+
+      music1.addEventListener("ended", () => {
+        music2.volume = 0.15;
+        music2.play();
+      });
+    });
+  </script>
+</body>
+</html>

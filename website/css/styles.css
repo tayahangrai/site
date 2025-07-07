@@ -1,0 +1,62 @@
+/* styles.css - goes inside the css/ folder */
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+  }
+  
+  .page1 {
+    background: hotpink;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+  }
+  
+  h1 {
+    font-size: 2rem;
+    z-index: 2;
+  }
+  
+  .whoosh-img {
+    position: absolute;
+    width: 150px;
+    opacity: 0;
+    animation: whoosh 6s infinite ease-in-out;
+  }
+  
+  @keyframes whoosh {
+    0% { left: -200px; opacity: 0; }
+    25% { left: 20%; opacity: 1; }
+    75% { left: 80%; opacity: 1; }
+    100% { left: 120vw; opacity: 0; }
+  }
+  
+  .next-btn {
+    position: absolute;
+    bottom: 20px;
+    padding: 12px 24px;
+    background: white;
+    color: hotpink;
+    font-weight: bold;
+    font-size: 1rem;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s ease;
+    z-index: 2;
+  }
+  
+  .next-btn:hover {
+    transform: scale(1.1);
+  }
+  

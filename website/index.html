@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page 1</title>
+
+  <!-- Playfair Display font for classy vibe -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="page page1" id="page1">
+    <h1 class="loop-text">Hello my love. I just wanted to take a moment to apologize for making you wait in the evening these past few weeks. And also apologize for other happenings that we're aware of.</h1>
+    <img src="images/image1.jpg" class="whoosh-img img1" style="top: 30%;">
+    <img src="images/image2.jpg" class="whoosh-img img2" style="top: 60%;">
+    <a href="page2.html" class="next-btn">Next Page</a>
+  </div>
+
+  <script>
+    const text = document.querySelector('.loop-text');
+    const img1 = document.querySelector('.img1');
+    const img2 = document.querySelector('.img2');
+
+    function cycleAnimation() {
+      text.style.opacity = '1';
+      img1.style.animation = 'none';
+      img2.style.animation = 'none';
+      img1.offsetHeight; // trigger reflow
+      img2.offsetHeight;
+
+      setTimeout(() => {
+        text.style.transition = 'opacity 2s';
+        text.style.opacity = '0';
+
+        setTimeout(() => {
+          img1.style.animation = 'whoosh 6s ease-in-out';
+          img2.style.animation = 'whoosh 6s ease-in-out';
+
+          setTimeout(cycleAnimation, 8000); // wait for images to move out
+        }, 2000); // wait for text fade out
+
+      }, 10000); // text stays visible for 10 seconds
+    }
+
+    window.onload = cycleAnimation;
+  </script>
+</body>
+</html>
