@@ -1,0 +1,73 @@
+/* page2.css - styles only for page 2 */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Lora', serif;
+  background: white;
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.scroll {
+  width: 90vw;
+  height: 70vh;
+  background: #f5f5dc;
+  border: 5px solid #d2b48c;
+  border-radius: 12px;
+  padding: 30px;
+  display: none;
+  margin-bottom: 20px;
+  box-shadow: 0 0 20px rgba(210, 180, 140, 0.6);
+  font-size: 1.2rem;
+  overflow-y: auto;
+}
+
+.scroll-btn,
+.mute-btn {
+  padding: 12px 24px;
+  background: pink;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+}
+
+.scroll-btn:hover,
+.mute-btn:hover {
+  background-color: #ff69b4;
+}
+
+.next-btn {
+  padding: 12px 24px;
+  background: hotpink;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.next-btn:hover {
+  transform: scale(1.1);
+}

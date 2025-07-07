@@ -1,0 +1,70 @@
+/* page3.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  background: white;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.page3 {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.image-strip {
+  display: flex;
+  gap: 20px;
+  animation: scroll-left 180s linear infinite;
+  padding-left: 100vw;
+}
+
+.slide-img {
+  width: 320px;
+  height: auto;
+  border-radius: 0; /* removed shadows/boxes */
+  box-shadow: none;
+  object-fit: contain;
+}
+
+.tap-message {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 1.2rem;
+  color: #333;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  z-index: 10;
+  animation: fadeOut 1s ease-in-out forwards;
+  animation-delay: 3s;
+}
+
+.tap-message.hide {
+  display: none;
+}
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
